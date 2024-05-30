@@ -16,9 +16,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //Logcat
-        Log.d("MainActivity", "onCreate");
-
+        //初始化按鈕
         initButton();
     }
 
