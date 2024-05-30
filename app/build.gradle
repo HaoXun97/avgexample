@@ -1,0 +1,99 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'tw.edu.scu.avgexample'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "tw.edu.scu.avgexample"
+        minSdk 24
+        targetSdk 34
+        versionCode 1
+        versionName "1.0.3"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        ndk.abiFilters 'armeabi-v7a', 'arm64-v8a', 'x86', 'x86_64'
+    }
+
+    buildFeatures {
+        buildConfig = true
+    }
+
+    buildTypes {
+        debug {
+            debuggable true
+        }
+        release {
+            debuggable false
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+        sourceSets {
+        main.res.srcDirs =
+                [
+                        //資源基本路徑
+                        'src/main/res',
+                        //範例展示使用到的資源路徑
+                        'src/main/res/kw_framework/material/background',
+                        'src/main/res/kw_framework/material/bgm',
+                        'src/main/res/kw_framework/material/character/default',
+                        'src/main/res/kw_framework/material/character/male_001',
+                        'src/main/res/kw_framework/material/character/male_002',
+                        'src/main/res/kw_framework/material/character/male_003',
+                        'src/main/res/kw_framework/material/character/male_004',
+                        'src/main/res/kw_framework/material/character/male_005',
+                        'src/main/res/kw_framework/material/character/female_001',
+                        'src/main/res/kw_framework/material/character/female_002',
+                        'src/main/res/kw_framework/material/character/female_003',
+                        'src/main/res/kw_framework/material/character/female_004',
+                        'src/main/res/kw_framework/material/character/female_005',
+                        'src/main/res/kw_framework/material/character/female_006',
+                        'src/main/res/kw_framework/material/dialog',
+                        'src/main/res/kw_framework/material/global',
+                        'src/main/res/kw_framework/material/menu',
+                        'src/main/res/kw_framework/material/picture',
+                        'src/main/res/kw_framework/material/sound',
+                        'src/main/res/kw_framework'
+                ]
+    }
+
+    productFlavors {
+        dev {
+            applicationId = "com.kawastudio.edu.scu.avgexample.dev"
+            buildConfigField "String", "ENV", "\"dev\""
+            resValue 'string', 'ad_view_id_01', 'ca-app-pub-3940256099942544/6300978111'
+            resValue 'string', 'rewarded_video_ad_01', 'ca-app-pub-3940256099942544/5224354917'
+        }
+        product {
+            applicationId = "com.kawastudio.edu.scu.avgexample"
+            buildConfigField "String", "ENV", "\"product\"";
+            resValue 'string', 'ad_view_id_01', 'ca-app-pub-9964618295477835/9665040138'
+            resValue 'string', 'rewarded_video_ad_01', 'ca-app-pub-9964618295477835/1727674513'
+        }
+    }
+
+    //flavorDimensions "default"
+    flavorDimensions = ["default"]
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.9.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.16'
+    implementation 'com.google.android.gms:play-services-ads:22.6.0'
+    
+}
