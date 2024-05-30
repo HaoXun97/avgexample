@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import tw.edu.scu.avgexample.mygame.MyScene1Activity;
 import tw.edu.scu.avgexample.sample.SampleSplashActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -15,6 +17,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //Logcat
+        Log.d("MainActivity", "onCreate");
 
         //初始化按鈕
         initButton();
@@ -38,9 +43,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //請在這邊跳轉到自己寫的遊戲首頁哦！
-//                Intent intent = new Intent();
-//                intent.setClass(MainActivity.this, MyScene_1_Activity.class);
-//                startActivity(intent);
+                Intent intent = new Intent();
+                intent.setClass(MainActivity.this, MyScene1Activity.class);
+                startActivity(intent);
             }
         });
 

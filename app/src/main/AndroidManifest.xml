@@ -14,6 +14,9 @@
         android:theme="@style/AppTheme"
         tools:targetApi="31">
         <activity
+            android:name=".mygame.MyScene1Activity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
@@ -27,8 +30,9 @@
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="ca-app-pub-9964618295477835~2689386481" />
 
-        <activity android:name=".sample.SampleSplashActivity" android:exported="true" />
-        
+        <activity
+            android:name=".sample.SampleSplashActivity"
+            android:exported="true" />
         <activity android:name=".sample.SampleCopyrightActivity" />
         <activity android:name=".sample.SampleScene_1_Activity" />
         <activity android:name=".sample.SampleScene_2_Activity" />
