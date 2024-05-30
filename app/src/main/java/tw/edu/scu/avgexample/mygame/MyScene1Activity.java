@@ -1,5 +1,6 @@
 package tw.edu.scu.avgexample.mygame;
 
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.Log;
 
@@ -12,6 +13,7 @@ import androidx.core.view.WindowInsetsCompat;
 import tw.edu.scu.avgexample.R;
 import tw.edu.scu.avgexample.framework.KWBaseSceneActivity;
 import tw.edu.scu.avgexample.framework.model.KWFirstPersonEventModel;
+import tw.edu.scu.avgexample.framework.utility.KWResourceUtils;
 
 public class MyScene1Activity extends KWBaseSceneActivity {
 
@@ -34,8 +36,12 @@ public class MyScene1Activity extends KWBaseSceneActivity {
     protected void initializeEvent () {
         super.initializeEvent();
 
-        KWFirstPersonEventModel event = new KWFirstPersonEventModel("王大明", "我的第一支AVG遊戲對話框");
+        Drawable background = KWResourceUtils.getDrawableByResourceId(this, R.drawable.desk__1_);
+
+        KWFirstPersonEventModel event = new KWFirstPersonEventModel("我", "奇怪我怎麼醒在一個長得很像米奇妙妙屋的地方").setBackgroundDrawable(background);
+        KWFirstPersonEventModel event2 = new KWFirstPersonEventModel("我", "最近是不是發生了很多穿越事件，我不會也穿越了吧").setBackgroundDrawable(background);
         eventManager.addEvent(event);
+        eventManager.addEvent(event2);
         eventManager.play("我的第一個事件");
 
     }
