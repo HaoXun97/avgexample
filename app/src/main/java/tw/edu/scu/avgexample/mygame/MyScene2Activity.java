@@ -122,8 +122,6 @@ public class MyScene2Activity extends KWBaseSceneActivity {
             eventManager.play("Scene2-3");
         }
         else if ("Scene2-5".equals(eventIdentifier)){
-            KWFullScreenEventModel event1 = new KWFullScreenEventModel("Scene2_End");
-            eventManager.addEvent(event1);
             eventManager.play("Scene2_End");
         }
         else if ("Scene2_End".equals(eventIdentifier)){
