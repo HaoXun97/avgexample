@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 //請在這邊跳轉到自己寫的遊戲首頁哦！
                 Intent intent = new Intent();
-                intent.setClass(MainActivity.this, MyScene3Activity.class);
+                intent.setClass(MainActivity.this, MyScene1Activity.class);
                 startActivity(intent);
             }
         });
