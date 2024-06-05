@@ -127,7 +127,7 @@ public class MyScene2Activity extends KWBaseSceneActivity {
             eventManager.play("Scene2_End");
         }
         else if ("Scene2_End".equals(eventIdentifier)){
-            finish();
+            switchSceneActivity(MyScene3Activity.class);
         }
 
 
