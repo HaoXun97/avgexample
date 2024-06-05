@@ -33,17 +33,32 @@ public class MyScene1Activity extends KWBaseSceneActivity {
     }
 
     @Override
+    protected void didFinishAllEvent(String eventIdentifier) {
+        super.didFinishAllEvent(eventIdentifier);
+
+        if ("Scene1_Start".equals(eventIdentifier)) {
+
+            Drawable background = KWResourceUtils.getDrawableByResourceId(this, R.drawable.outdoor);
+
+            KWFirstPersonEventModel event1 = new KWFirstPersonEventModel("我", "(奇怪我怎麼醒在一個長得很像米奇妙妙屋的地方)").setBackgroundDrawable(background);
+            KWFirstPersonEventModel event2 = new KWFirstPersonEventModel("我", "(最近是不是發生了很多穿越事件，我不會也穿越了吧)").setBackgroundDrawable(background);
+
+            eventManager.addEvent(event1);
+            eventManager.addEvent(event2);
+            eventManager.play("Scene1-1");
+        }
+        else if ("Scene1-1".equals(eventIdentifier)) {
+            //切換Scene2
+            switchSceneActivity(MyScene2Activity.class);
+        }
+
+    }
+
+    @Override
     protected void initializeEvent () {
         super.initializeEvent();
 
-        Drawable background = KWResourceUtils.getDrawableByResourceId(this, R.drawable.desk);
-
-        KWFirstPersonEventModel event1 = new KWFirstPersonEventModel("我", "奇怪我怎麼醒在一個長得很像米奇妙妙屋的地方").setBackgroundDrawable(background);
-        KWFirstPersonEventModel event2 = new KWFirstPersonEventModel("我", "最近是不是發生了很多穿越事件，我不會也穿越了吧").setBackgroundDrawable(background);
-
-        eventManager.addEvent(event1);
-        eventManager.addEvent(event2);
-        eventManager.play("我的第一個事件");
+        eventManager.play("Scene1_Start");
 
     }
 
