@@ -71,6 +71,9 @@ public class MyScene3Activity extends KWBaseSceneActivity {
         else if (("Scene3-3_b").equals(eventIdentifier)) {
             switchSceneActivity(MyScene5Activity.class);
         }
+        else if (("Scene3_End").equals(eventIdentifier)) {
+            finish();
+        }
     }
 
     @Override
