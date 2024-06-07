@@ -39,11 +39,13 @@ public class MyScene5Activity extends KWBaseSceneActivity {
         super.initializeEvent();
 
         eventManager.play("Scene5_Start");
+
     }
 
     @Override
     protected void didFinishAllEvent(String eventIdentifier) {
         super.didFinishAllEvent(eventIdentifier);
+
         if ("Scene5_Start".equals(eventIdentifier)) {
 
             Drawable background = KWResourceUtils.getDrawableByResourceId(this, R.drawable.outdoor_grass);
@@ -68,8 +70,8 @@ public class MyScene5Activity extends KWBaseSceneActivity {
             eventManager.addEvent(event6);
             eventManager.addEvent(event7);
             eventManager.play("Scene5-1");
-        }
-        else if ("Scene5-1".equals(eventIdentifier)) {
+
+        } else if ("Scene5-1".equals(eventIdentifier)) {
 
             ArrayList<String> optionArrayList = new ArrayList<>();
             optionArrayList.add("樹下");
@@ -79,8 +81,8 @@ public class MyScene5Activity extends KWBaseSceneActivity {
 
             eventManager.addEvent(event);
             eventManager.play("Scene5-2");
-        }
-        else if ("Scene5a".equals(eventIdentifier)) {
+
+        } else if ("Scene5a".equals(eventIdentifier)) {
 
             KWCharacterModel minnie = new KWCharacterModel(this, "minnie", "米妮");
 
@@ -88,8 +90,8 @@ public class MyScene5Activity extends KWBaseSceneActivity {
 
             eventManager.addEvent(event1);
             eventManager.play("Scene5a_switch");
-        }
-        else if ("Scene5b".equals(eventIdentifier)) {
+
+        } else if ("Scene5b".equals(eventIdentifier)) {
 
             KWCharacterModel minnie = new KWCharacterModel(this, "minnie", "米妮");
 
@@ -98,17 +100,19 @@ public class MyScene5Activity extends KWBaseSceneActivity {
             eventManager.addEvent(event1);
             eventManager.play("Scene5b_switch");
 
+        } else if ("Scene5a_switch".equals(eventIdentifier)) {
+
+            switchSceneActivity(MyScene5aActivity.class);
+
+        } else if ("Scene5b_switch".equals(eventIdentifier)) {
+
+            switchSceneActivity(MyScene5bActivity.class);
+
+        } else if ("Scene5_End".equals(eventIdentifier)) {
+
+            finish();
 
         }
-        else if ("Scene5a_switch".equals(eventIdentifier)) {
-            switchSceneActivity(MyScene5aActivity.class);
-        }
-        else if ("Scene5b_switch".equals(eventIdentifier)) {
-            switchSceneActivity(MyScene5bActivity.class);
-        }
-//        else if ("Scene5_End".equals(eventIdentifier)) {
-//            finish();
-//        }
     }
 
     @Override
