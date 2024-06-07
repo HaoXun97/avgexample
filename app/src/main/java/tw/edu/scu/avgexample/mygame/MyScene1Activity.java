@@ -33,6 +33,14 @@ public class MyScene1Activity extends KWBaseSceneActivity {
     }
 
     @Override
+    protected void initializeEvent() {
+        super.initializeEvent();
+
+        eventManager.play("Scene1_Start");
+
+    }
+
+    @Override
     protected void didFinishAllEvent(String eventIdentifier) {
         super.didFinishAllEvent(eventIdentifier);
 
@@ -46,22 +54,17 @@ public class MyScene1Activity extends KWBaseSceneActivity {
             eventManager.addEvent(event1);
             eventManager.addEvent(event2);
             eventManager.play("Scene1-1");
-        }
-        else if ("Scene1-1".equals(eventIdentifier)) {
+
+        } else if ("Scene1-1".equals(eventIdentifier)) {
+
             eventManager.play("Scene1_End");
-        }
-        else if ("Scene1_End".equals(eventIdentifier)) {
-            //切換Scene2
+
+        } else if ("Scene1_End".equals(eventIdentifier)) {
+
+            //切換 Scene2
             switchSceneActivity(MyScene2Activity.class);
+
         }
-
-    }
-
-    @Override
-    protected void initializeEvent () {
-        super.initializeEvent();
-
-        eventManager.play("Scene1_Start");
 
     }
 

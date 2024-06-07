@@ -32,16 +32,16 @@ public class MyScene4aActivity extends KWBaseSceneActivity {
 
         eventManager.addEvent(new KWFullScreenEventModel("SCENE4A_FULLSCREEN_EVENT"));
         eventManager.play("Scene4a");
+
     }
 
     @Override
     protected void didFinishAllEvent(String eventIdentifier) {
         super.didFinishAllEvent(eventIdentifier);
 
-        if("Scene4a".equals(eventIdentifier)) {
+        if ("Scene4a".equals(eventIdentifier)) {
             eventManager.play("Scene4a_End");
-        }
-        else if("Scene4a_End".equals(eventIdentifier)) {
+        } else if ("Scene4a_End".equals(eventIdentifier)) {
             finish();
         }
     }

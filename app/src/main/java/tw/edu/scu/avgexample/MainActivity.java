@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_main);
 
         //Logcat
@@ -23,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
 
         //初始化按鈕
         initButton();
+
     }
 
     private void initButton() {
@@ -33,19 +35,23 @@ public class MainActivity extends AppCompatActivity {
         exampleButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 Intent intent = new Intent();
                 intent.setClass(MainActivity.this, SampleSplashActivity.class);
                 startActivity(intent);
+
             }
         });
 
         myGameButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 //請在這邊跳轉到自己寫的遊戲首頁哦！
                 Intent intent = new Intent();
                 intent.setClass(MainActivity.this, MyScene1Activity.class);
                 startActivity(intent);
+
             }
         });
 
