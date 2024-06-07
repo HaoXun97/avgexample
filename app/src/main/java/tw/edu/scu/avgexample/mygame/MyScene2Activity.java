@@ -54,17 +54,17 @@ public class MyScene2Activity extends KWBaseSceneActivity {
             //角色設定
             KWCharacterModel character = new KWCharacterModel(this, "test", "米奇");
 
+            //事件執行
             KWThirdPersonEventModel event1 = new KWThirdPersonEventModel(character, "Hello!\n是我！米奇！");
-            event1.setBackgroundDrawable(background);
             KWThirdPersonEventModel event2 = new KWThirdPersonEventModel(character, "對了，要不要進我的妙妙屋！");
-
             KWFirstPersonEventModel event3 = new KWFirstPersonEventModel("我", "(什麼鬼東西，真的穿越了還是我在做夢？)");
 
+            //設定event背景
             event1.setBackgroundDrawable(background);
+
             eventManager.addEvent(event1);
             eventManager.addEvent(event2);
             eventManager.addEvent(event3);
-
             eventManager.play("Scene2-1");
 
         }
