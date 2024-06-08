@@ -20,7 +20,7 @@ import tw.edu.scu.avgexample.framework.model.KWOptionEventModel;
 import tw.edu.scu.avgexample.framework.model.KWThirdPersonEventModel;
 import tw.edu.scu.avgexample.framework.utility.KWResourceUtils;
 
-public class MyScene5Activity extends KWBaseSceneActivity {
+public class MyScene5Activity extends MyBaseSceneActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

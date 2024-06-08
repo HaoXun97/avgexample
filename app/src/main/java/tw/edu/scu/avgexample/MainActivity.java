@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
 
                 //請在這邊跳轉到自己寫的遊戲首頁哦！
                 Intent intent = new Intent();
-                intent.setClass(MainActivity.this, MyScene1Activity.class);
+                intent.setClass(MainActivity.this, MyMenuMainActivity.class);
                 startActivity(intent);
 
             }

@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".mygame.MyMenuSwitchSceneActivity">
+
+    <FrameLayout
+        android:id="@+id/containerFrameLayout"
+        android:layout_width="540dp"
+        android:layout_height="960dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/menuBackgroundImageView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/kw_menu_background" />
+
+        <ScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginTop="80dp"
+                    android:layout_marginRight="50dp">
+
+                    <Button
+                        android:id="@+id/backButton"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:background="@drawable/kw_back_icon" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="章節選擇"
+                        android:textAlignment="center"
+                        android:textSize="36sp"
+                        android:textStyle="bold" />
+                </FrameLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginRight="30dp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="top"
+                        android:layout_marginBottom="25dp"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="【遊戲開始】"
+                            android:textAlignment="center"
+                            android:textSize="18sp" />
+
+                        <Button
+                            android:id="@+id/switchScene1Button"
+                            android:layout_width="240dp"
+                            android:layout_height="100dp"
+                            android:background="@drawable/kw_menu_button_background"
+                            android:paddingBottom="20dp"
+                            android:text="場景1"
+                            android:textColor="@android:color/holo_orange_dark"
+                            android:textSize="24sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="top"
+                        android:layout_marginBottom="25dp"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="【米奇出現】"
+                            android:textAlignment="center"
+                            android:textSize="18sp" />
+
+                        <Button
+                            android:id="@+id/switchScene2Button"
+                            android:layout_width="240dp"
+                            android:layout_height="100dp"
+                            android:background="@drawable/kw_menu_button_background"
+                            android:paddingBottom="20dp"
+                            android:text="場景2"
+                            android:textColor="@android:color/holo_orange_dark"
+                            android:textSize="24sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="top"
+                        android:layout_marginBottom="25dp"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="【參觀妙妙屋】"
+                            android:textAlignment="center"
+                            android:textSize="18sp" />
+
+                        <Button
+                            android:id="@+id/switchScene3Button"
+                            android:layout_width="240dp"
+                            android:layout_height="100dp"
+                            android:background="@drawable/kw_menu_button_background"
+                            android:paddingBottom="20dp"
+                            android:text="場景3"
+                            android:textColor="@android:color/holo_orange_dark"
+                            android:textSize="24sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="top"
+                        android:layout_marginBottom="25dp"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="【房間】"
+                            android:textAlignment="center"
+                            android:textSize="18sp" />
+
+                        <Button
+                            android:id="@+id/switchScene4Button"
+                            android:layout_width="240dp"
+                            android:layout_height="100dp"
+                            android:background="@drawable/kw_menu_button_background"
+                            android:paddingBottom="20dp"
+                            android:text="場景4"
+                            android:textColor="@android:color/holo_orange_dark"
+                            android:textSize="24sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="top"
+                        android:layout_marginBottom="25dp"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="【室外】"
+                            android:textAlignment="center"
+                            android:textSize="18sp" />
+
+                        <Button
+                            android:id="@+id/switchScene5Button"
+                            android:layout_width="240dp"
+                            android:layout_height="100dp"
+                            android:background="@drawable/kw_menu_button_background"
+                            android:paddingBottom="20dp"
+                            android:text="場景5"
+                            android:textColor="@android:color/holo_orange_dark"
+                            android:textSize="24sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp">
+
+                </FrameLayout>
+            </LinearLayout>
+        </ScrollView>
+
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
