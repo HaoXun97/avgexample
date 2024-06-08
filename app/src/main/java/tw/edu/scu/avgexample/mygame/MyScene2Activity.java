@@ -81,7 +81,7 @@ public class MyScene2Activity extends KWBaseSceneActivity {
             optionArrayList.add("是");
             optionArrayList.add("否");
 
-            KWOptionEventModel event1 = new KWOptionEventModel("Scene2-2_Option", "進去米奇妙妙舞參觀看看嗎？", optionArrayList);
+            KWOptionEventModel event1 = new KWOptionEventModel("Scene2-2_Option", "要進去米奇妙妙屋參觀看看嗎？", optionArrayList);
 
             eventManager.addEvent(event1);
             eventManager.play("Scene2-2");
@@ -91,7 +91,7 @@ public class MyScene2Activity extends KWBaseSceneActivity {
             KWCharacterModel character = new KWCharacterModel(this, "test", "米奇");
 
             KWThirdPersonEventModel event1 = new KWThirdPersonEventModel(character, "吼吼太好了，我們走！");
-            KWThirdPersonEventModel event2 = new KWThirdPersonEventModel(character, "我差點忘記了，要讓妙妙屋出現，我們必須要念奇妙的咒語");
+            KWThirdPersonEventModel event2 = new KWThirdPersonEventModel(character, "我差點忘記了，要讓妙妙屋出現，我們必須要念奇妙的咒語。");
             KWThirdPersonEventModel event3 = new KWThirdPersonEventModel(character, "米斯嘎，木斯嘎，米老鼠！");
 
             eventManager.addEvent(event1);
@@ -101,7 +101,7 @@ public class MyScene2Activity extends KWBaseSceneActivity {
 
         } else if ("Scene2-2_No".equals(eventIdentifier)) {
 
-            KWFirstPersonEventModel event1 = new KWFirstPersonEventModel("不要就會失去一個的體驗妙妙屋的機會，請重新選擇");
+            KWFirstPersonEventModel event1 = new KWFirstPersonEventModel("不要就會失去一個的體驗妙妙屋的機會，請重新選擇！");
 
             eventManager.addEvent(event1);
             eventManager.play("Scene2-2_retry");
@@ -159,19 +159,26 @@ public class MyScene2Activity extends KWBaseSceneActivity {
         super.onOptionSelected(identifier, index);
 
         if ("Scene2-2_Option".equals(identifier)) {
-            if (index == 0) {
-                eventManager.play("Scene2-2_Yes");
-            } else if (index == 1) {
-                eventManager.play("Scene2-2_No");
+
+            switch (index) {
+                case 0:
+                    eventManager.play("Scene2-2_Yes");
+                    break;
+                case 1:
+                    eventManager.play("Scene2-2_No");
+                    break;
+                default:
+                    break;
             }
+
         } else if ("Scene2-4_Option".equals(identifier)) {
-            if (index == 0) {
-                eventManager.play("Scene2-4_wrong");
-            } else if (index == 1) {
+
+            if (index == 1) {
                 eventManager.play("Scene2-4_correct");
-            } else if (index == 2) {
+            } else {
                 eventManager.play("Scene2-4_wrong");
             }
+
         }
 
     }

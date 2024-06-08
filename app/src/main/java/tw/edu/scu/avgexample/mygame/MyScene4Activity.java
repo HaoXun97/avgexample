@@ -121,13 +121,21 @@ public class MyScene4Activity extends KWBaseSceneActivity {
         super.onOptionSelected(identifier, index);
 
         if ("Scene4-3_Option".equals(identifier)) {
-            if (index == 0) {
-                eventManager.play("Scene4a");
-            } else if (index == 1) {
-                eventManager.play("Scene4b");
-            } else if (index == 2) {
-                eventManager.play("Scene4c");
+
+            switch (index) {
+                case 0:
+                    eventManager.play("Scene4a");
+                    break;
+                case 1:
+                    eventManager.play("Scene4b");
+                    break;
+                case 2:
+                    eventManager.play("Scene4c");
+                    break;
+                default:
+                    break;
             }
+
         }
     }
 }

@@ -49,9 +49,9 @@ public class MyScene5bActivity extends KWBaseSceneActivity {
             KWCharacterModel mickey = new KWCharacterModel(this, "test", "米奇");
             KWCharacterModel minnie = new KWCharacterModel(this, "minnie", "米妮");
 
-            KWFullScreenEventModel event1 = new KWFullScreenEventModel("米奇米妮都在尋找玩偶，要不要問一下是怎麼樣的玩偶");
+            KWFullScreenEventModel event1 = new KWFullScreenEventModel("米奇米妮都在尋找玩偶，要不要問一下是怎麼樣的玩偶。");
             KWFirstPersonEventModel event2 = new KWFirstPersonEventModel("我", "米奇米妮，我們要尋找的玩偶是什麼樣的呢？");
-            KWThirdPersonEventModel event3 = new KWThirdPersonEventModel(mickey, "我們要找一隻小狗的玩偶");
+            KWThirdPersonEventModel event3 = new KWThirdPersonEventModel(mickey, "我們要找一隻小狗的玩偶。");
             KWThirdPersonEventModel event4 = new KWThirdPersonEventModel(minnie, "不如我們從溜滑梯上面溜下來看看有沒有在裡面吧！");
 
             event1.setBackgroundDrawable(background);
@@ -67,11 +67,11 @@ public class MyScene5bActivity extends KWBaseSceneActivity {
             KWCharacterModel mickey = new KWCharacterModel(this, "test", "米奇");
             KWCharacterModel minnie = new KWCharacterModel(this, "minnie", "米妮");
 
-            KWFullScreenEventModel event1 = new KWFullScreenEventModel("跟著米奇到了溜滑梯口");
-            KWFirstPersonEventModel event2 = new KWFirstPersonEventModel("我", "哇，已經好久沒有玩過溜滑梯了");
-            KWThirdPersonEventModel event3 = new KWThirdPersonEventModel(mickey, "那我先下去啦！米妮下來的時候記得看看有沒有玩偶在裡面喔");
+            KWFullScreenEventModel event1 = new KWFullScreenEventModel("你跟著米奇到了溜滑梯口");
+            KWFirstPersonEventModel event2 = new KWFirstPersonEventModel("我", "哇！已經好久沒有玩過溜滑梯了！");
+            KWThirdPersonEventModel event3 = new KWThirdPersonEventModel(mickey, "那我先下去啦！米妮下來的時候記得看看有沒有玩偶在裡面喔！");
             KWThirdPersonEventModel event4 = new KWThirdPersonEventModel(minnie, "嗯！");
-            KWFirstPersonEventModel event5 = new KWFirstPersonEventModel("兩個人…鼠都溜下去了，我也下去吧");
+            KWFirstPersonEventModel event5 = new KWFirstPersonEventModel("兩個人都溜下去了，我也溜下去吧！");
 
             eventManager.addEvent(event1);
             eventManager.addEvent(event2);
@@ -82,8 +82,8 @@ public class MyScene5bActivity extends KWBaseSceneActivity {
 
         } else if ("Scene5b-2".equals(eventIdentifier)) {
 
-            KWFullScreenEventModel event1 = new KWFullScreenEventModel("就這樣三個人…二鼠+一人玩了一下午都沒有發現小狗玩偶");
-            KWFullScreenEventModel event2 = new KWFullScreenEventModel("在主角還在思考的時候一陣白光閃過，再次睜眼主角已經回到自己的書桌上了");
+            KWFullScreenEventModel event1 = new KWFullScreenEventModel("就這樣三個人玩了一下午都沒有發現小狗玩偶。");
+            KWFullScreenEventModel event2 = new KWFullScreenEventModel("在主角還在思考的時候一陣白光閃過，再次睜眼主角已經回到自己的書桌上了。");
             KWFullScreenEventModel event3 = new KWFullScreenEventModel("THE END!");
 
             eventManager.addEvent(event1);
