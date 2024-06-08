@@ -2,6 +2,7 @@ package tw.edu.scu.avgexample.mygame;
 
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -21,6 +22,7 @@ import tw.edu.scu.avgexample.framework.model.KWOptionEventModel;
 import tw.edu.scu.avgexample.framework.model.KWPictureEventModel;
 import tw.edu.scu.avgexample.framework.model.KWThirdPersonEventModel;
 import tw.edu.scu.avgexample.framework.utility.KWResourceUtils;
+import tw.edu.scu.avgexample.sample.SampleMenuMainActivity;
 
 public class MyScene4aActivity extends MyBaseSceneActivity {
 
@@ -129,7 +131,8 @@ public class MyScene4aActivity extends MyBaseSceneActivity {
 
         } else if ("Scene4a_End".equals(eventIdentifier)) {
 
-            finish();
+            Log.d("MyScene4aActivity", "onFinish");
+            switchSceneActivity(MyMenuMainActivity.class, R.anim.kw_scene_animation_zoom_in, R.anim.kw_scene_animation_fade_out);
 
         }
     }

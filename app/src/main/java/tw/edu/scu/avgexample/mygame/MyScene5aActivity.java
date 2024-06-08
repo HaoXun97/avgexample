@@ -2,6 +2,7 @@ package tw.edu.scu.avgexample.mygame;
 
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.util.Log;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -104,7 +105,8 @@ public class MyScene5aActivity extends MyBaseSceneActivity {
 
         } else if ("Scene5a_End".equals(eventIdentifier)) {
 
-            finish();
+            Log.d("MyScene5aActivity", "onFinish");
+            switchSceneActivity(MyMenuMainActivity.class, R.anim.kw_scene_animation_zoom_in, R.anim.kw_scene_animation_fade_out);
 
         }
     }
