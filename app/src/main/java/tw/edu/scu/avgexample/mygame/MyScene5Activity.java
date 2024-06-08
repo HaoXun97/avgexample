@@ -52,12 +52,12 @@ public class MyScene5Activity extends KWBaseSceneActivity {
             KWCharacterModel mickey = new KWCharacterModel(this, "test", "米奇");
             KWCharacterModel minnie = new KWCharacterModel(this, "minnie", "米妮");
 
-            KWFullScreenEventModel event1 = new KWFullScreenEventModel("跟著米奇走進門後發現到了妙妙屋外面");
-            KWFirstPersonEventModel event2 = new KWFirstPersonEventModel("(不是進門嗎怎麼到外面來了)");
+            KWFullScreenEventModel event1 = new KWFullScreenEventModel("你跟著米奇走進門後發現到了妙妙屋外面。");
+            KWFirstPersonEventModel event2 = new KWFirstPersonEventModel("(不是進門嗎怎麼到外面來了...)");
             KWThirdPersonEventModel event3 = new KWThirdPersonEventModel(mickey, "這是我們的好朋友米妮！");
             KWThirdPersonEventModel event4 = new KWThirdPersonEventModel(minnie, "歡迎你加入我們一起尋寶的遊戲！");
-            KWFirstPersonEventModel event5 = new KWFirstPersonEventModel("(要玩尋寶遊戲嗎)");
-            KWThirdPersonEventModel event6 = new KWThirdPersonEventModel(mickey, "我們要尋找一隻可愛的玩偶，它就在米奇妙妙屋外面");
+            KWFirstPersonEventModel event5 = new KWFirstPersonEventModel("我", "(要玩尋寶遊戲嗎??)");
+            KWThirdPersonEventModel event6 = new KWThirdPersonEventModel(mickey, "我們要尋找一隻可愛的玩偶，它就在米奇妙妙屋外面。");
             KWThirdPersonEventModel event7 = new KWThirdPersonEventModel(minnie, "你覺得想從哪裡開始尋找呢？");
 
             event1.setBackgroundDrawable(background);
@@ -86,7 +86,7 @@ public class MyScene5Activity extends KWBaseSceneActivity {
 
             KWCharacterModel minnie = new KWCharacterModel(this, "minnie", "米妮");
 
-            KWThirdPersonEventModel event1 = new KWThirdPersonEventModel(minnie, "那我們就從 樹下 那邊開始找吧！");
+            KWThirdPersonEventModel event1 = new KWThirdPersonEventModel(minnie, "那我們就從「樹下」那邊開始找吧！");
 
             eventManager.addEvent(event1);
             eventManager.play("Scene5a_switch");
@@ -95,7 +95,7 @@ public class MyScene5Activity extends KWBaseSceneActivity {
 
             KWCharacterModel minnie = new KWCharacterModel(this, "minnie", "米妮");
 
-            KWThirdPersonEventModel event1 = new KWThirdPersonEventModel(minnie, "那我們就從 溜滑梯 那邊開始找吧！");
+            KWThirdPersonEventModel event1 = new KWThirdPersonEventModel(minnie, "那我們就從「溜滑梯」那邊開始找吧！");
 
             eventManager.addEvent(event1);
             eventManager.play("Scene5b_switch");
@@ -126,6 +126,9 @@ public class MyScene5Activity extends KWBaseSceneActivity {
                     break;
                 case 1:
                     eventManager.play("Scene5b");
+                    break;
+                default:
+                    break;
             }
         }
     }
