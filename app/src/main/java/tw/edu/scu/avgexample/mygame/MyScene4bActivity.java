@@ -18,10 +18,11 @@ import tw.edu.scu.avgexample.framework.model.KWCharacterModel;
 import tw.edu.scu.avgexample.framework.model.KWFirstPersonEventModel;
 import tw.edu.scu.avgexample.framework.model.KWFullScreenEventModel;
 import tw.edu.scu.avgexample.framework.model.KWOptionEventModel;
+import tw.edu.scu.avgexample.framework.model.KWPictureEventModel;
 import tw.edu.scu.avgexample.framework.model.KWThirdPersonEventModel;
 import tw.edu.scu.avgexample.framework.utility.KWResourceUtils;
 
-public class MyScene4bActivity extends KWBaseSceneActivity {
+public class MyScene4bActivity extends MyBaseSceneActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +40,7 @@ public class MyScene4bActivity extends KWBaseSceneActivity {
     protected void initializeEvent() {
         super.initializeEvent();
 
-        eventManager.play("Scene4a_Start");
+        eventManager.play("Scene4b_Start");
 
     }
 
@@ -47,7 +48,7 @@ public class MyScene4bActivity extends KWBaseSceneActivity {
     protected void didFinishAllEvent(String eventIdentifier) {
         super.didFinishAllEvent(eventIdentifier);
 
-        if ("Scene4a_Start".equals(eventIdentifier)) {
+        if ("Scene4b_Start".equals(eventIdentifier)) {
 
             Drawable background = KWResourceUtils.getDrawableByResourceId(this, R.drawable.tudou_machine);
             KWCharacterModel character = new KWCharacterModel(this, "test", "米奇");
@@ -65,28 +66,34 @@ public class MyScene4bActivity extends KWBaseSceneActivity {
             eventManager.addEvent(event3);
             eventManager.addEvent(event4);
 
-            eventManager.play("Scene4a-1");
+            eventManager.play("Scene4b-1");
 
-        } else if ("Scene4a-1".equals(eventIdentifier)) {
+        } else if ("Scene4b-1".equals(eventIdentifier)) {
 
             Drawable background = KWResourceUtils.getDrawableByResourceId(this, R.drawable.bathroom);
+            Drawable dog = KWResourceUtils.getDrawableByResourceId(this, R.drawable.dog);
+            Drawable tudou = KWResourceUtils.getDrawableByResourceId(this, R.drawable.tudou);
 
-            KWFirstPersonEventModel event1 = new KWFirstPersonEventModel("我", "我們要陪狗狗玩但我們好像沒有工具可以陪她玩");
-            event1.setBackgroundDrawable(background);
+            // Hide character
+            KWThirdPersonEventModel event0 = new KWThirdPersonEventModel((new KWCharacterModel(this, "test"))).setCharacterImageVisibility(false);
 
-            KWThirdPersonEventModel event2 = new KWThirdPersonEventModel(new KWCharacterModel(this, "test", "米奇"), "不然找土豆好了，剛剛好像有一個皮球選項");
-            KWThirdPersonEventModel event3 = new KWThirdPersonEventModel(new KWCharacterModel(this, "test", "米奇"), "好辦法！那我來叫土豆來吧！oh土豆～");
+            KWPictureEventModel event1 = new KWPictureEventModel(dog, "我", "我們要陪狗狗玩但我們好像沒有工具可以陪她玩");
+            KWPictureEventModel event2 = new KWPictureEventModel(dog, "我", "不然找土豆好了，剛剛好像有一個皮球選項");
+            KWPictureEventModel event3 = new KWPictureEventModel(dog, "米奇", "好辦法！那我來叫土豆來吧！oh土豆～");
 
             //土豆出現
-            KWThirdPersonEventModel event4 = new KWThirdPersonEventModel(new KWCharacterModel(this, "test", "米奇"), "就交給你來選擇要哪樣工具了！");
+            KWPictureEventModel event4 = new KWPictureEventModel(tudou, "米奇", "就交給你來選擇要哪樣工具了！");
 
+            event0.setBackgroundDrawable(background);
+
+            eventManager.addEvent(event0);
             eventManager.addEvent(event1);
             eventManager.addEvent(event2);
             eventManager.addEvent(event3);
             eventManager.addEvent(event4);
-            eventManager.play("Scene4a_ToolSelection");
+            eventManager.play("Scene4b_ToolSelection");
 
-        } else if ("Scene4a_ToolSelection".equals(eventIdentifier)) {
+        } else if ("Scene4b_ToolSelection".equals(eventIdentifier)) {
 
             ArrayList<String> options = new ArrayList<>();
             options.add("鍋鏟");
@@ -99,7 +106,24 @@ public class MyScene4bActivity extends KWBaseSceneActivity {
             eventManager.addEvent(optionEvent);
             eventManager.play("tool_selection");
 
-        } else if ("Scene4a_End".equals(eventIdentifier)) {
+        } else if ("Scene4b-2".equals(eventIdentifier)) {
+
+            // Hide character
+            KWThirdPersonEventModel event0 = new KWThirdPersonEventModel((new KWCharacterModel(this, "test"))).setCharacterImageVisibility(false);
+
+            Drawable background = KWResourceUtils.getDrawableByResourceId(this, R.drawable.bedroom);
+            KWFullScreenEventModel event1 = new KWFullScreenEventModel("米奇和小狗在妙妙屋裡面開心的洗澡，主角則在自己的床上醒來");
+            event1.setBackgroundDrawable(background);
+            KWFirstPersonEventModel event2 = new KWFirstPersonEventModel("我", "(原來只是夢嗎？好真實啊⋯)");
+            KWFirstPersonEventModel event3 = new KWFirstPersonEventModel("THE END!");
+
+            eventManager.addEvent(event0);
+            eventManager.addEvent(event1);
+            eventManager.addEvent(event2);
+            eventManager.addEvent(event3);
+            eventManager.play("Scene4b_End");
+
+        } else if ("Scene4b_End".equals(eventIdentifier)) {
 
             finish();
 
@@ -120,20 +144,20 @@ public class MyScene4bActivity extends KWBaseSceneActivity {
                     KWThirdPersonEventModel eventPot = new KWThirdPersonEventModel(character, "選擇了鍋鏟！");
                     eventManager.addEvent(eventPot);
                     eventManager.addEvent(eventRetry);
-                    eventManager.play("Scene4a_ToolSelection");
+                    eventManager.play("Scene4b_ToolSelection");
                     break;
                 case 1:
                     KWThirdPersonEventModel eventGlue = new KWThirdPersonEventModel(character, "選擇了膠水！");
 
                     eventManager.addEvent(eventGlue);
                     eventManager.addEvent(eventRetry);
-                    eventManager.play("Scene4a_ToolSelection");
+                    eventManager.play("Scene4b_ToolSelection");
                     break;
                 case 2:
                     KWThirdPersonEventModel eventBall = new KWThirdPersonEventModel(character, "選擇了皮球！");
                     eventManager.addEvent(eventBall);
                     eventManager.addEvent(eventRetry);
-                    eventManager.play("Scene4a_ToolSelection");
+                    eventManager.play("Scene4b_ToolSelection");
                     break;
                 case 3:
                     KWThirdPersonEventModel eventMystery = new KWThirdPersonEventModel(character, "選擇了神秘工具！");
@@ -142,23 +166,11 @@ public class MyScene4bActivity extends KWBaseSceneActivity {
                     KWThirdPersonEventModel eventNext = new KWThirdPersonEventModel(character, "太好了是狗狗沐浴乳！可以用沐浴乳幫狗狗洗澡了！");
                     eventManager.addEvent(eventMystery);
                     eventManager.addEvent(eventNext);
-
-                    //米奇、狗消失
-                    Drawable background = KWResourceUtils.getDrawableByResourceId(this, R.drawable.bedroom);
-                    KWFullScreenEventModel event1 = new KWFullScreenEventModel("米奇和小狗在妙妙屋裡面開心的洗澡，主角則在自己的床上醒來");
-                    event1.setBackgroundDrawable(background);
-                    KWFirstPersonEventModel event2 = new KWFirstPersonEventModel("我", "(原來只是夢嗎？好真實啊⋯)");
-                    KWFullScreenEventModel event3 = new KWFullScreenEventModel("THE END!");
-                    eventManager.addEvent(event1);
-                    eventManager.addEvent(event2);
-                    eventManager.addEvent(event3);
-                    eventManager.play("Scene4a_End");
+                    eventManager.play("Scene4b-2");
                     break;
                 default:
-
                     eventManager.addEvent(eventRetry);
-                    eventManager.play("Scene4a_ToolSelection");
-
+                    eventManager.play("Scene4b_ToolSelection");
                     break;
             }
         }

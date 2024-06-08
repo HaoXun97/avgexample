@@ -17,7 +17,7 @@ import tw.edu.scu.avgexample.framework.model.KWFullScreenEventModel;
 import tw.edu.scu.avgexample.framework.model.KWThirdPersonEventModel;
 import tw.edu.scu.avgexample.framework.utility.KWResourceUtils;
 
-public class MyScene5bActivity extends KWBaseSceneActivity {
+public class MyScene5bActivity extends MyBaseSceneActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
