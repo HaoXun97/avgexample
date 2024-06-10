@@ -59,6 +59,8 @@ public class MyScene4cActivity extends MyBaseSceneActivity {
             KWThirdPersonEventModel event3 = new KWThirdPersonEventModel(mickey, "好辦法！那我來叫土豆來吧！oh土豆～");
             KWPictureEventModel event4 = new KWPictureEventModel(picture, "米奇", "就交給你來選擇要哪樣工具了！");
 
+            event1.setBackgroundDrawable(background);
+
             eventManager.addEvent(event1);
             eventManager.addEvent(event2);
             eventManager.addEvent(event3);
@@ -100,7 +102,7 @@ public class MyScene4cActivity extends MyBaseSceneActivity {
 
             KWFullScreenEventModel event1 = new KWFullScreenEventModel("米奇和小狗在妙妙屋裡面開心的吃著午餐，主角則在自己的床上醒來");
             KWFirstPersonEventModel event2 = new KWFirstPersonEventModel("我", "(原來只是夢嗎？好真實啊⋯)");
-            KWFullScreenEventModel event3 = new KWFullScreenEventModel("THE END!");
+            KWFirstPersonEventModel event3 = new KWFirstPersonEventModel("THE END!");
 
             eventManager.addEvent(event1);
             eventManager.addEvent(event2);
